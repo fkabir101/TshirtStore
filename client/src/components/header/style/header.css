@@ -1,0 +1,47 @@
+
+.nav-item {
+  margin-left: 3px;
+}
+.navbarCustom{
+  background: rgb(26,26,29);
+  background: linear-gradient(144deg, rgba(26,26,29,1) 0%, rgba(53,53,53,1) 100%);
+}
+.navBrandCustom{
+  color: #ff003c;
+}
+#header {
+  margin-bottom: 50px;
+}
+
+#userLink {
+  color: black;
+}
+
+#createLink {
+  color: black;
+} 
+
+#logoutLink {
+  color: black;
+}
+
+#title {
+  font-size: 300%;
+  font-family: 'Racing Sans One';
+}
+.btn {
+  margin: 2px;
+}
+
+#userJumbo {
+  margin: 4px;
+}
+
+#actionCard {
+  margin: 4px;
+}
+
+#rowJumbo {
+  margin-left: 20px;
+  margin-bottom: 150px;
+}

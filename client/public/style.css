@@ -1,0 +1,9 @@
+.cardColor {
+  background:#c30734;
+  background: radial-gradient(circle, #c30734 0%, #ff003c 100%);
+  border-radius: 15px;
+  color: rgb(211,233,230)
+
+  /* rgb(12,114,99) 
+  rgb(16,146,130) */
+}
