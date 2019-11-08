@@ -40,7 +40,7 @@ paypal.configure({
   'client_secret': 'ELIq7aUfGpNNBFgos30339K_ftZ_oLvAsejkDJ3jWw3o3jWy7Fxg4zYqPnhW1ZJlKS8kHD-7beZ9iA4q'
 });
 
-  app.post('/pay', (req,res) =>{
+  app.post('/paypal/pay', (req,res) =>{
     paypalTotal = req.body.total.toString()
     var create_payment_json = {
       "intent": "authorize",
