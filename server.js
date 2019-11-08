@@ -15,6 +15,7 @@ const PORT = process.env.PORT || 3001;
 
 app.use(morgan('dev'));
 
+
 app.use(session({secret: 'keyboard dog', resave:true, saveUninitialized: true}));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -22,7 +23,10 @@ app.use(passport.session());
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(express.static('client/build'));
-app.use(routes);
+app.use(express.static(path.join(__dirname,'/build')));
+app.get('/', function (req, res, next) {
+    res.sendFile(path.resolve('build/index.html'));
+});
 
 // need to set up pasport authenticate
 
