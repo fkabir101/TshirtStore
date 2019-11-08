@@ -1,5 +1,5 @@
 {
-  "name": "uni-fight",
+  "name": "tshirt-store",
   "version": "1.0.0",
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "server.js",
@@ -28,6 +28,7 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^5.0.1",
+    "paypal-rest-sdk": "^1.8.1",
     "react-alice-carousel": "^1.13.3",
     "serve-static": "^1.13.2"
   },

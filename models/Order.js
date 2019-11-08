@@ -1,6 +1,11 @@
 const mongoose = require("mongoose");
 
 const OrderSchema = new mongoose.Schema({
+  name:{
+    type: String,
+    required: true,
+    index: true
+  },
   email:{
     type: String,
     required: true,
@@ -18,9 +23,9 @@ const OrderSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  shipStatues: {
-    type: Boolean,
-    default: false
+  item:{
+    type: String,
+    required: true
   }
 })
 

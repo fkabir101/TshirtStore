@@ -8,6 +8,7 @@ class Form extends Component{
     this.state = {
       firstName: "",
       lastName: "",
+      email: "",
       address: "",
       city: "",
       zip: 0,
@@ -40,7 +41,13 @@ class Form extends Component{
               type="text"
               onChangeValue = {this.updateValue}
             />
-                      <InputField
+            <InputField
+              fieldName="Email"
+              id="email"
+              type="text"
+              onChangeValue = {this.updateValue}
+            />
+            <InputField
               fieldName="Address"
               id="address"
               type="text"
@@ -59,6 +66,10 @@ class Form extends Component{
               onChangeValue = {this.updateValue}
             />
           </form>
+        </div>
+
+        <div className = 'col-6'>
+          <h4>Cart</h4>
         </div>
       </div>
       </div>

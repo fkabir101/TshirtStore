@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Form from '../form/checkoutForm'
 
-function CheckOutPage(){
-  return(
-    <div className = ".backgroundColor">
-      <Form></Form>
-    </div>
-  )
+class CheckOutPage extends Component {
+  render(){
+    return(
+      <div className = ".backgroundColor">
+        <Form></Form>
+      </div>
+    )
+  }
 }
 
 export default CheckOutPage;

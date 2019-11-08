@@ -1,8 +1,10 @@
 .cardColor {
-  background:#053525;
+  /* background:#053525; */
   /* background: radial-gradient(#1ee3e7, #1c9695,  #053525, #0a2b27); */
+  border-style: solid;
+  border-color: #1ee3e7;
   border-radius: 15px;
-  color: #1ee3e7
+  color: white
 
   /* rgb(12,114,99) 
   rgb(16,146,130) */

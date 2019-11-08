@@ -1,47 +1,66 @@
 import React, {Component} from "react";
-
+import API from '../../utils/api'
 class LargeShirtCard extends Component{
 
   state = {
-    item : this.props.name,
-    size : '',
+    size : 'M',
     price : this.props.price,
-    quantity : 0
+    quantity : 1
+  }
+
+  onChangeValue = (event) =>{
+    this.setState({quantity: event.target.value});
+  }
+  getSize = (event) =>{
+    this.setState({size: event.target.attributes.getNamedItem('data-key').value})
+  }
+  onClickFunction = () =>{
+   // this.props.addItem(this.state.quantity, this.state.size, this.state.price)
+    let orderData = {
+      price: this.state.price,
+      name: `MetalGearShirt size ${this.state.size}`,
+      quantity: this.state.quantity,
+      total: this.state.price * this.state.quantity
+    }
+
+    API.placeOrder(orderData);
+    
   }
   render(){
     return(
       <div>
-        <div className = "container">
+        <div className = "container pb-5">
           <div className = "row">
-            <div className = "col-6">
+            <div className = "col-md-6 col-sm-12">
               <img src="https://via.placeholder.com/450x450"></img>
             </div>
-            <div className = "col-6">
+            <div className = "col-md-6 col-sm-12">
               <div className="card-body cardColor">
               <h2 className="card-title">Shirt Name</h2>
               <p className="card-text">Description: </p>
               <p className="card-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
-              <div className="form-group">
+              <div className="container">
                 <div className="row">
                   <div className = "col-2">
-                    <label for="quantity">Quantity:</label>
+                    <label htmlFor="quantity">Quantity:</label>
                   </div>
                   <div className = 'col-2'>
-                    <input className="form-control mb-2" type="number" value="1" id="quantity"></input>
+                    <input className="mb-2" type="number" defaultValue ="1" id="quantity" 
+                    onBlur ={e => this.onChangeValue(e)}></input>
                   </div>
                 </div>
   
-                <label for="quantity">Size:</label>
-                <div className="btn-group btn-group-lg">
-                  <button type="button" className="btn btn-outline-light mr-3">S</button>
-                  <button type="button" className="btn btn-outline-light mr-3">M</button>
-                  <button type="button" className="btn btn-outline-light mr-3">L</button>
-                  <button type="button" className="btn btn-outline-light mr-3">XL</button>
+                <label htmlFor="quantity">Size:</label>
+                <div className="btn-group btn-group-lg" onClick={this.getSize.bind(this)}>
+                  <button type="button" className="btn btn-outline-light mr-3" data-key='S'>S</button>
+                  <button type="button" className="btn btn-outline-light mr-3" data-key='M'>M</button>
+                  <button type="button" className="btn btn-outline-light mr-3" data-key='L'>L</button>
+                  <button type="button" className="btn btn-outline-light mr-3" data-key='XL'>XL</button>
                 </div>
               </div>
               <h3 className="card-text">Price: ${this.state.price}</h3>
               <div className="text-center">
-                <button type="button" className="btn btn-success btn-lg btn-block">Add To Cart</button>
+                <button type="button" className="btn btn-success btn-lg btn-block" onClick = {this.onClickFunction}>Add To Cart</button>
               </div>
             </div>
           </div>
