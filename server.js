@@ -23,10 +23,7 @@ app.use(passport.session());
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(express.static('client/build'));
-app.use(express.static(path.join(__dirname,'/build')));
-app.get('/', function (req, res, next) {
-    res.sendFile(path.resolve('build/index.html'));
-});
+app.use(routes)
 
 // need to set up pasport authenticate
 
