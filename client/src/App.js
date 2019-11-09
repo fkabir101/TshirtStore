@@ -32,7 +32,7 @@ class App extends Component {
               <Route exact path="/" render={() => <LargeCard 
                 addItem = {this.addItem.bind(this)}
                 name = 'Shirt'
-                price = '9.99'
+                price = '25.00'
               />}/>
                 <Route exact path="/finished" render={() => <Success 
               />}/>

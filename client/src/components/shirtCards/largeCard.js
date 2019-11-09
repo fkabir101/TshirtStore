@@ -65,6 +65,8 @@ class LargeShirtCard extends Component{
                   <button type="button" className="btn btn-outline-light mr-3" data-key='M'>M</button>
                   <button type="button" className="btn btn-outline-light mr-3" data-key='L'>L</button>
                   <button type="button" className="btn btn-outline-light mr-3" data-key='XL'>XL</button>
+                  <button type="button" className="btn btn-outline-light mr-3" data-key='2XL'>2XL</button>
+                  <button type="button" className="btn btn-outline-light mr-3" data-key='3XL'>3XL</button>
                 </div>
               </div>
               <h3 className="card-text">Price: ${this.state.price}</h3>
