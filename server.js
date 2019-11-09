@@ -55,7 +55,7 @@ paypal.configure({
       },
       "redirect_urls": {
           "return_url": "https://newchallanger.herokuapp.com/success",
-          "cancel_url": "http://cancel.url"
+          "cancel_url": "https://newchallanger.herokuapp.com/"
       },
       "transactions": [{
           "item_list": {
@@ -110,7 +110,6 @@ paypal.configure({
           throw error;
       } else {
           console.log("Get Payment Response");
-
           let user = payment.payer.payer_info.shipping_address;
           let model = {
             name: user.recipient_name,
@@ -119,7 +118,8 @@ paypal.configure({
             city: user.city,
             state: user.state,
             zip: user.postal_code,
-            item: payment.transactions[0].item_list.items[0].name
+            item: payment.transactions[0].item_list.items[0].name,
+            quantity:payment.transactions[0].item_list.items[0].quantity
           }
           console.log(model);
           db.Orders
