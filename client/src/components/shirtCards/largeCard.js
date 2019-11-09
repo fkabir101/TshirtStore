@@ -45,7 +45,7 @@ class LargeShirtCard extends Component{
             </div>
             <div className = "col-md-6 col-sm-12">
               <div className="card-body cardColor">
-              <h2 className="card-title">Shirt Name</h2>
+              <h2 className="card-title">Evolution</h2>
               <p className="card-text">Description: </p>
               <p className="card-text">The Evolution of Snake</p>
               <div className="container">

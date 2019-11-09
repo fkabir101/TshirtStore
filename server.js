@@ -124,7 +124,7 @@ paypal.configure({
           console.log(model);
           db.Orders
           .create(model)
-          .then(dbModel => {res.sendFile(path.join(__dirname, "../client/build/index.html"));})
+          .then(dbModel => {res.redirect('/finished');})
           .catch(err => res.status(422).json(err))
           //res.redirect('/orders/create', dbModel)
       }

@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Header from "./components/header/headerMain";
 import LargeCard from "./components/shirtCards/largeCard"
+import Success from './components/success'
 
 class App extends Component {
   state = {
@@ -32,6 +33,8 @@ class App extends Component {
                 addItem = {this.addItem.bind(this)}
                 name = 'Shirt'
                 price = '9.99'
+              />}/>
+                <Route exact path="/finished" render={() => <Success 
               />}/>
             </Switch>
           </div>
