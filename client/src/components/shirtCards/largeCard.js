@@ -1,11 +1,20 @@
 import React, {Component} from "react";
 import API from '../../utils/api'
+import AliceCarousel from 'react-alice-carousel';
 class LargeShirtCard extends Component{
 
   state = {
     size : 'M',
     price : this.props.price,
-    quantity : 1
+    quantity : 1,
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      }
+    }
   }
 
   onChangeValue = (event) =>{
@@ -32,13 +41,13 @@ class LargeShirtCard extends Component{
         <div className = "container pb-5">
           <div className = "row">
             <div className = "col-md-6 col-sm-12">
-              <img src="https://via.placeholder.com/450x450"></img>
+              <img src={'/images/shirt.jpg'} width="500" height="400"></img>
             </div>
             <div className = "col-md-6 col-sm-12">
               <div className="card-body cardColor">
               <h2 className="card-title">Shirt Name</h2>
               <p className="card-text">Description: </p>
-              <p className="card-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
+              <p className="card-text">The Evolution of Snake</p>
               <div className="container">
                 <div className="row">
                   <div className = "col-2">
