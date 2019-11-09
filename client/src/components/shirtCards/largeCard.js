@@ -47,7 +47,7 @@ class LargeShirtCard extends Component{
               <div className="card-body cardColor">
               <h2 className="card-title">Evolution</h2>
               <p className="card-text">Description: </p>
-              <p className="card-text">The Evolution of Snake</p>
+              <p className="card-text">The Evolution of Snake made with 100% ringspun cotton</p>
               <div className="container">
                 <div className="row">
                   <div className = "col-2">
