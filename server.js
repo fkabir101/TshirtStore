@@ -54,7 +54,7 @@ paypal.configure({
           "payment_method": "paypal"
       },
       "redirect_urls": {
-          "return_url": "http://localhost:3001/success",
+          "return_url": "https://newchallanger.herokuapp.com/success",
           "cancel_url": "http://cancel.url"
       },
       "transactions": [{
