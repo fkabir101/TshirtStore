@@ -23,7 +23,7 @@ app.use(passport.session());
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(express.static('client/build'));
-app.use(routes)
+
 
 // need to set up pasport authenticate
 
@@ -77,7 +77,7 @@ paypal.configure({
         for(let i = 0; i< payment.links.length; i++){
           if(payment.links[i].rel ==='approval_url'){
             console.log(payment.links[i].href)
-            res.redirect(payment.links[i].href)
+            return res.send(payment.links[i].href)
           }
         }
       }
@@ -129,6 +129,10 @@ paypal.configure({
 
 
 //**********************************************
+
+
+app.use(routes)
+
 
 app.listen(PORT, function(){
   console.log(`Listening on port: ${PORT}`)
