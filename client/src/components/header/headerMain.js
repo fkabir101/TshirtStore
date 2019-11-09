@@ -1,5 +1,5 @@
 import React from "react";
-import RenderNavbar from "./navButtons";
+//import RenderNavbar from "./navButtons";
 import "./style/header.css";
 
 function Header() {
@@ -9,7 +9,7 @@ function Header() {
         <ul className="navbar-right mr-auto">
         </ul>
         <span className="navbar-text">
-        <RenderNavbar/>
+        {/* <RenderNavbar/> */}
     </span>
 
     </nav>

@@ -60,7 +60,7 @@ class LargeShirtCard extends Component{
               </div>
               <h3 className="card-text">Price: ${this.state.price}</h3>
               <div className="text-center">
-                <button type="button" className="btn btn-success btn-lg btn-block" onClick = {this.onClickFunction}>Add To Cart</button>
+                <button type="button" className="btn btn-success btn-lg btn-block" onClick = {this.onClickFunction}>BUY NOW</button>
               </div>
             </div>
           </div>
