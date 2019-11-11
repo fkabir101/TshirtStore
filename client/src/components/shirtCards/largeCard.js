@@ -14,6 +14,9 @@ class LargeShirtCard extends Component{
     this.setState({quantity: event.target.value});
   }
   getSize = (event) =>{
+    if(event.target.attributes.getNamedItem('data-key').value == '2Xl' || event.target.attributes.getNamedItem('data-key').value == '3Xl'){
+      this.setState({price: '22.50'})
+    }
     this.setState({size: event.target.attributes.getNamedItem('data-key').value})
   }
   onClickFunction = () =>{
@@ -36,7 +39,8 @@ class LargeShirtCard extends Component{
         <div className = "container pb-5">
           <div className = "row">
             <div className = "col-md-6 col-sm-12">
-              <Gallery></Gallery>
+              {/* <Gallery></Gallery> */}
+              <img src={`/images/shirt${i}.png`} width="500" height="400"></img>
             </div>
             <div className = "col-md-6 col-sm-12">
               <div className="card-body cardColor">
