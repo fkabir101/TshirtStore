@@ -8,14 +8,6 @@ class LargeShirtCard extends Component{
     size : 'M',
     price : this.props.price,
     quantity : 1,
-    responsive: {
-      0: {
-        items: 1
-      },
-      400: {
-        items: 2
-      }
-    }
   }
 
   onChangeValue = (event) =>{
@@ -50,7 +42,7 @@ class LargeShirtCard extends Component{
               <div className="card-body cardColor">
               <h2 className="card-title">Evolution</h2>
               <p className="card-text">Description: </p>
-              <p className="card-text">The evolution of a Legend made with 100% ringspun cotton already Pre-shrunk</p>
+              <p className="card-text">The evolution of a Legend made with 100% ringspun pre-shrunk cotton</p>
               <div className="container">
                 <div className="row">
                   <div className = "col-2">
