@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import API from '../../utils/api'
 import AliceCarousel from 'react-alice-carousel';
+import Gallery from '../gallery/gallery'
 class LargeShirtCard extends Component{
 
   state = {
@@ -35,13 +36,15 @@ class LargeShirtCard extends Component{
     API.placeOrder(orderData);
     
   }
+
+  
   render(){
     return(
       <div>
         <div className = "container pb-5">
           <div className = "row">
             <div className = "col-md-6 col-sm-12">
-              <img src={'/images/shirt.jpg'} width="500" height="400"></img>
+              <Gallery></Gallery>
             </div>
             <div className = "col-md-6 col-sm-12">
               <div className="card-body cardColor">
