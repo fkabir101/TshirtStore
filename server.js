@@ -5,7 +5,7 @@ const session = require('express-session');
 const morgan = require('morgan');
 const passport = require('passport');
 var paypal = require('paypal-rest-sdk');
-const localStartegey = require('passport-local').Strategy
+const LocalStrategy = require('passport-local').Strategy
 
 const db = require('./models');
 
@@ -20,6 +20,11 @@ app.use(session({secret: 'keyboard dog', resave:true, saveUninitialized: true}))
 app.use(passport.initialize());
 app.use(passport.session());
 
+const User = require('./models/User');
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(express.static('client/build'));
@@ -33,17 +38,17 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/tshirt", { useC
 // setup paypal
 let paypalTotal = ''
 // testing
-// paypal.configure({
-//   'mode': 'sandbox', //sandbox or live
-//   'client_id': 'AWY4zd14vb9pmofaCzJRhfmbANoFiVvyBBMISyIurd8bXtaq7vuldRd7IEyJyBoGDO-EE933lJxXRp_k',
-//   'client_secret': 'ELIq7aUfGpNNBFgos30339K_ftZ_oLvAsejkDJ3jWw3o3jWy7Fxg4zYqPnhW1ZJlKS8kHD-7beZ9iA4q'
-// });
-// live
 paypal.configure({
-  'mode': 'live', //sandbox or live
-  'client_id': 'Aewf0fMi0_e9Y1r_xdhbTlYmJTk2J5H7gcmV7KOpa9hqklfPx8L6f-o0WN78CJcdHfiv34JWQd3BkAq1',
-  'client_secret': 'EFempxYHDGOebLW0nTjRS3Fd2xwYv0tehtRcMresiH_dkHW1a82hVnov9cOQbnUhoJ_LkI2HlDvhHkUI'
+  'mode': 'sandbox', //sandbox or live
+  'client_id': 'AWY4zd14vb9pmofaCzJRhfmbANoFiVvyBBMISyIurd8bXtaq7vuldRd7IEyJyBoGDO-EE933lJxXRp_k',
+  'client_secret': 'ELIq7aUfGpNNBFgos30339K_ftZ_oLvAsejkDJ3jWw3o3jWy7Fxg4zYqPnhW1ZJlKS8kHD-7beZ9iA4q'
 });
+// live
+// paypal.configure({
+//   'mode': 'live', //sandbox or live
+//   'client_id': 'Aewf0fMi0_e9Y1r_xdhbTlYmJTk2J5H7gcmV7KOpa9hqklfPx8L6f-o0WN78CJcdHfiv34JWQd3BkAq1',
+//   'client_secret': 'EFempxYHDGOebLW0nTjRS3Fd2xwYv0tehtRcMresiH_dkHW1a82hVnov9cOQbnUhoJ_LkI2HlDvhHkUI'
+// });
 
   app.post('/paypal/pay', (req,res) =>{
     paypalTotal = req.body.total.toString()
@@ -53,8 +58,8 @@ paypal.configure({
           "payment_method": "paypal"
       },
       "redirect_urls": {
-          "return_url": "https://newchallanger.herokuapp.com/success",
-          "cancel_url": "https://newchallanger.herokuapp.com/"
+          "return_url": "http://www.newchallenger.store/success",
+          "cancel_url": "http://www.newchallenger.store"
       },
       "transactions": [{
           "item_list": {
@@ -102,7 +107,7 @@ paypal.configure({
         }
       }]
     };
-
+    console.log('gets here')
     paypal.payment.execute(paymentId, execute_payment_json, function (error, payment) {
       if (error) {
           console.log(error.response);
@@ -130,7 +135,7 @@ paypal.configure({
   });
   })
 
-
+//'http://www.newchallenger.store/finished'
 
 
 //**********************************************

@@ -30,7 +30,12 @@ const OrderSchema = new mongoose.Schema({
   quantity:{
     type: Number,
     required: true
+  },
+  status:{
+    type: String,
+    default: 'Order Taken'
   }
+
 })
 
 const Order = mongoose.model("Order", OrderSchema);

@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import API from '../../utils/api'
-import AliceCarousel from 'react-alice-carousel';
 import Gallery from '../gallery/gallery'
 class LargeShirtCard extends Component{
 
