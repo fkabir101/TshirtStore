@@ -29,12 +29,12 @@ class Gallery extends React.Component {
       <AliceCarousel
         items={this.state.galleryItems}
         responsive={this.responsive}
-        autoPlayInterval={2000}
+        autoPlayInterval={5000}
         autoPlayDirection="rtl"
         autoPlay={true}
         fadeOutAnimation={true}
         mouseTrackingEnabled={true}
-        playButtonEnabled={true}
+        playButtonEnabled={false}
         disableAutoPlayOnAction={true}
         onSlideChange={this.onSlideChange}
         onSlideChanged={this.onSlideChanged}
