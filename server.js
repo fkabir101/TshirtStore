@@ -6,7 +6,7 @@ const morgan = require('morgan');
 const passport = require('passport');
 var paypal = require('paypal-rest-sdk');
 const LocalStrategy = require('passport-local').Strategy
-
+require('dotenv').config();
 const db = require('./models');
 
 const app = express();
@@ -37,17 +37,11 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/tshirt", { useC
 // ***************************************************
 // setup paypal
 let paypalTotal = ''
-// testing
-// paypal.configure({
-//   'mode': 'sandbox', //sandbox or live
-//   'client_id': 'AWY4zd14vb9pmofaCzJRhfmbANoFiVvyBBMISyIurd8bXtaq7vuldRd7IEyJyBoGDO-EE933lJxXRp_k',
-//   'client_secret': 'ELIq7aUfGpNNBFgos30339K_ftZ_oLvAsejkDJ3jWw3o3jWy7Fxg4zYqPnhW1ZJlKS8kHD-7beZ9iA4q'
-// });
-// live
+
 paypal.configure({
   'mode': 'live', //sandbox or live
-  'client_id': 'Aewf0fMi0_e9Y1r_xdhbTlYmJTk2J5H7gcmV7KOpa9hqklfPx8L6f-o0WN78CJcdHfiv34JWQd3BkAq1',
-  'client_secret': 'EFempxYHDGOebLW0nTjRS3Fd2xwYv0tehtRcMresiH_dkHW1a82hVnov9cOQbnUhoJ_LkI2HlDvhHkUI'
+  'client_id': process.env.PAYPAL_API,
+  'client_secret': process.env.PAYPAL_SECRET
 });
 
   app.post('/paypal/pay', (req,res) =>{
