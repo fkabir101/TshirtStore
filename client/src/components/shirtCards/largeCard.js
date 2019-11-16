@@ -14,10 +14,10 @@ class LargeShirtCard extends Component{
   }
   getSize = (event) =>{
     if(event.target.attributes.getNamedItem('data-key').value === '2XL' || event.target.attributes.getNamedItem('data-key').value === '3XL'){
-      this.setState({price: '22.50'})
+      this.setState({price: '27.50'})
     }
     else{
-      this.setState({price: '20.00'})
+      this.setState({price: '25.00'})
     }
     this.setState({size: event.target.attributes.getNamedItem('data-key').value})
   }
@@ -69,7 +69,7 @@ class LargeShirtCard extends Component{
                   <button type="button" className="btn btn-outline-light mr-3" data-key='3XL'>3XL</button>
                 </div>
               </div>
-              <h3 className="card-text">Price: ${this.state.price}</h3>
+              <h3 className="card-text">Price INCLUDING SHIPPING: ${this.state.price}</h3>
               <div className="text-center">
                 <button type="button" className="btn btn-success btn-lg btn-block" onClick = {this.onClickFunction}>BUY NOW</button>
               </div>
