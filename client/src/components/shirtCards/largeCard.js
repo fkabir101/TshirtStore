@@ -59,14 +59,17 @@ class LargeShirtCard extends Component{
                   </div>
                 </div>
   
-                <label htmlFor="quantity">Size:</label>
+                
                 <div className="btn-group btn-group-lg" onClick={this.getSize.bind(this)}>
-                  <button type="button" className="btn btn-outline-light mr-3" data-key='S'>S</button>
-                  <button type="button" className="btn btn-outline-light mr-3" data-key='M'>M</button>
-                  <button type="button" className="btn btn-outline-light mr-3" data-key='L'>L</button>
-                  <button type="button" className="btn btn-outline-light mr-3" data-key='XL'>XL</button>
-                  <button type="button" className="btn btn-outline-light mr-3" data-key='2XL'>2XL</button>
-                  <button type="button" className="btn btn-outline-light mr-3" data-key='3XL'>3XL</button>
+                  <div className= 'row'>
+                  <label htmlFor="quantity">Size:</label>
+                    <button type="button" className="btn btn-outline-light mr-3" data-key='S'>S</button>
+                    <button type="button" className="btn btn-outline-light mr-3" data-key='M'>M</button>
+                    <button type="button" className="btn btn-outline-light mr-3" data-key='L'>L</button>
+                    <button type="button" className="btn btn-outline-light mr-3" data-key='XL'>XL</button>
+                    <button type="button" className="btn btn-outline-light mr-3" data-key='2XL'>2XL</button>
+                    <button type="button" className="btn btn-outline-light mr-3" data-key='3XL'>3XL</button>
+                  </div>
                 </div>
               </div>
               <h3 className="card-text">Price INCLUDING SHIPPING: ${this.state.price}</h3>
