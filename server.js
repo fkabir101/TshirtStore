@@ -116,6 +116,7 @@ paypal.configure({
             city: user.city,
             state: user.state,
             zip: user.postal_code,
+            country: user.country_code,
             item: payment.transactions[0].item_list.items[0].name,
             quantity:payment.transactions[0].item_list.items[0].quantity
           }

@@ -23,6 +23,10 @@ const OrderSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
+  country:{
+    type: String,
+    required: true
+  },
   item:{
     type: String,
     required: true
