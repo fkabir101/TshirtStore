@@ -6,7 +6,7 @@ import 'react-alice-carousel/lib/alice-carousel.css'
 class Gallery extends React.Component {
   
   state = {
-    galleryItems: [1, 2].map((i) => <span><img src={`/images/shirt${i}.png`} className='min-vh-50'></img></span>),
+    galleryItems: [1, 2].map((i) => <span><img src={`/images/shirt${i}.png`} className={`min-vh-50 img${i}`}></img></span>),
   }
  
   responsive = {

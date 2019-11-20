@@ -10,4 +10,8 @@
   rgb(16,146,130) */
 }
 
-img {width: 100%; height: 400px; max-width: 1363px;}
+.img1 {width: 100%; height: 400px; max-width: 1363px;}
+.img2 {height: 400px; max-width: 1363px;   display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 66%;}
