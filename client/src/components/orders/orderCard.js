@@ -44,7 +44,7 @@ class OrderCard extends Component {
               <strong>Address:</strong> {this.props.address}
               <strong>  City:</strong> {this.props.city}
               <strong>  Zip:</strong> {this.props.zip}
-              <string>  Country:</string> {this.props.country}
+              <strong>  Country:</strong> {this.props.country}
             </ul>
             <ul>
               <strong>Status:</strong> {this.state.status}

@@ -31,6 +31,7 @@ class OrderPage extends Component{
                     address={order.address}
                     city={order.city}
                     zip={order.zip}
+                    country={order.country}
                     status={order.status}
                   />
                   </div>
